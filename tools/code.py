@@ -373,28 +373,23 @@ def extract_status_code_percentages(data):
     
     return result
 
+    # description="获取指定集群在时间范围内的状态码分析结果",
+    # args_schema={
+    #     "type": "object",
+    #     "properties": {
+    #         "groupname": {"type": "string", "description": "集群名称(例如: lf-lan-ha1)"},
+    #         "begin_time": {
+    #             "type": "string",
+    #             "description": "开始时间(例如: 2025-01-07 00:00:00)",
+    #         },
+    #         "end_time": {
+    #             "type": "string",
+    #             "description": "结束时间(例如: 2025-01-08 17:00:00)",
+    #         },
+    #     },
+    #     "required": ["groupname", "begin_time", "end_time"],
+    # }
 
-from app.tools.registry import tool
-# 获取集群指定时间段的CPU分析结果
-@tool(
-    name="get_cluster_status_code_analysis",
-    description="获取指定集群在时间范围内的状态码分析结果",
-    args_schema={
-        "type": "object",
-        "properties": {
-            "groupname": {"type": "string", "description": "集群名称(例如: lf-lan-ha1)"},
-            "begin_time": {
-                "type": "string",
-                "description": "开始时间(例如: 2025-01-07 00:00:00)",
-            },
-            "end_time": {
-                "type": "string",
-                "description": "结束时间(例如: 2025-01-08 17:00:00)",
-            },
-        },
-        "required": ["groupname", "begin_time", "end_time"],
-    },
-)
 def get_cluster_status_code_analysis(groupname,begin_time,end_time):
     """
     获取集群状态码分析数据

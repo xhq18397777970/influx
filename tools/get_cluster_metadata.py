@@ -69,26 +69,24 @@ def format_overview_data(data):
             result[cn_name] = value
     
     return result
-from app.tools.registry import tool 
-@tool(
-    name="get_cluster_metadata",
-    description="获取指定集群指定时间段元数据",
-    args_schema={
-        "type": "object",
-        "properties": {
-            "groupname": {"type": "string", "description": "集群名称(例如: ga-lan-jdns1)"},
-            "begin_time": {
-                "type": "string",
-                "description": "开始时间(例如: 2026-01-13 09:00:00),要求格式 YYYY-MM-DD HH:MM:SS ",
-            },
-            "end_time": {
-                "type": "string",
-                "description": "结束时间(例如: 2026-01-13 09:30:00)，要求格式 YYYY-MM-DD HH:MM:SS ",
-            },
-        },
-        "required": ["groupname", "begin_time", "end_time"],
-    },
-)
+
+    # name="get_cluster_metadata",
+    # description="获取指定集群指定时间段元数据",
+    # args_schema={
+    #     "type": "object",
+    #     "properties": {
+    #         "groupname": {"type": "string", "description": "集群名称(例如: ga-lan-jdns1)"},
+    #         "begin_time": {
+    #             "type": "string",
+    #             "description": "开始时间(例如: 2026-01-13 09:00:00),要求格式 YYYY-MM-DD HH:MM:SS ",
+    #         },
+    #         "end_time": {
+    #             "type": "string",
+    #             "description": "结束时间(例如: 2026-01-13 09:30:00)，要求格式 YYYY-MM-DD HH:MM:SS ",
+    #         },
+    #     },
+    #     "required": ["groupname", "begin_time", "end_time"],
+    # }
 def get_cluster_metadata(groupname, begin_time, end_time):
     """
     """

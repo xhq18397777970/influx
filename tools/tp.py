@@ -374,27 +374,23 @@ def merge_dicts(dict1, dict2, dict3):
 
 
 # --- 综合分析模块 ---
-
-from app.tools.registry import tool
-@tool(
-    name="get_connect_delay_analysis",
-    description="获取集群建连耗时(TP)分析结果",
-    args_schema={
-        "type": "object",
-        "properties": {
-            "groupname": {"type": "string", "description": "集群名称(例如: lf-lan-ha1)"},
-            "begin_time": {
-                "type": "string",
-                "description": "开始时间(例如: 2026-01-14 11:00:00)",
-            },
-            "end_time": {
-                "type": "string",
-                "description": "结束时间(例如: 2026-01-14 11:30:00)",
-            },
-        },
-        "required": ["groupname", "begin_time", "end_time"],
-    },
-)
+    # name="get_connect_delay_analysis",
+    # description="获取集群建连耗时(TP)分析结果",
+    # args_schema={
+    #     "type": "object",
+    #     "properties": {
+    #         "groupname": {"type": "string", "description": "集群名称(例如: lf-lan-ha1)"},
+    #         "begin_time": {
+    #             "type": "string",
+    #             "description": "开始时间(例如: 2026-01-14 11:00:00)",
+    #         },
+    #         "end_time": {
+    #             "type": "string",
+    #             "description": "结束时间(例如: 2026-01-14 11:30:00)",
+    #         },
+    #     },
+    #     "required": ["groupname", "begin_time", "end_time"],
+    # }
 def get_cluster_connect_delay_analysis(groupname, begin_time, end_time):
     """
     获取三个时间段的集群QPS数据

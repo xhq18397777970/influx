@@ -335,26 +335,25 @@ def extract_bps_timeSeriesData(response_data):
                         chart['series_data'][i]['value']
                     ))
     return result
-from app.tools.registry import tool
-@tool(
-    name="get_cluster_network_analysis",
-    description="获取指定集群时间范围内的网络（出入口带宽）指标分析结果",
-    args_schema={
-        "type": "object",
-        "properties": {
-            "groupname": {"type": "string", "description": "集群名称(例如: ga-lan-jdns1)"},
-            "begin_time": {
-                "type": "string",
-                "description": "开始时间(例如: 2026-01-13 09:00:00),要求格式 YYYY-MM-DD HH:MM:SS ",
-            },
-            "end_time": {
-                "type": "string",
-                "description": "结束时间(例如: 2026-01-13 09:30:00)，要求格式 YYYY-MM-DD HH:MM:SS ",
-            },
-        },
-        "required": ["groupname", "begin_time", "end_time"],
-    },
-)
+
+#     name="get_cluster_network_analysis",
+#     description="获取指定集群时间范围内的网络（出入口带宽）指标分析结果",
+#     args_schema={
+#         "type": "object",
+#         "properties": {
+#             "groupname": {"type": "string", "description": "集群名称(例如: ga-lan-jdns1)"},
+#             "begin_time": {
+#                 "type": "string",
+#                 "description": "开始时间(例如: 2026-01-13 09:00:00),要求格式 YYYY-MM-DD HH:MM:SS ",
+#             },
+#             "end_time": {
+#                 "type": "string",
+#                 "description": "结束时间(例如: 2026-01-13 09:30:00)，要求格式 YYYY-MM-DD HH:MM:SS ",
+#             },
+#         },
+#         "required": ["groupname", "begin_time", "end_time"],
+#     }
+
 def get_cluster_network_analysis(groupname, begin_time, end_time):
     """
     获取三个时间段的集群网络数据

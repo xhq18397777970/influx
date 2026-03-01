@@ -435,28 +435,24 @@ def extract_cpu_timeSeriesData(api_response):
     return result
 
 
-    
-from app.tools.registry import tool
-# 获取集群指定时间段的CPU分析结果
-@tool(
-    name="get_cluster_cpu_analysis",
-    description="获取指定集群在时间范围内的CPU指标分析结果",
-    args_schema={
-        "type": "object",
-        "properties": {
-            "groupname": {"type": "string", "description": "集群名称(例如: lf-lan-ha1)"},
-            "begin_time": {
-                "type": "string",
-                "description": "开始时间(要求格式 YYYY-MM-DD HH:MM:SS)",
-            },
-            "end_time": {
-                "type": "string",
-                "description": "结束时间(要求格式 YYYY-MM-DD HH:MM:SS)",
-            },
-        },
-        "required": ["groupname", "begin_time", "end_time"],
-    },
-)
+
+    # name="get_cluster_cpu_analysis",
+    # description="获取指定集群在时间范围内的CPU指标分析结果",
+    # args_schema={
+    #     "type": "object",
+    #     "properties": {
+    #         "groupname": {"type": "string", "description": "集群名称(例如: lf-lan-ha1)"},
+    #         "begin_time": {
+    #             "type": "string",
+    #             "description": "开始时间(要求格式 YYYY-MM-DD HH:MM:SS)",
+    #         },
+    #         "end_time": {
+    #             "type": "string",
+    #             "description": "结束时间(要求格式 YYYY-MM-DD HH:MM:SS)",
+    #         },
+    #     },
+    #     "required": ["groupname", "begin_time", "end_time"],
+    # }
 def get_cluster_cpu_analysis(groupname, begin_time, end_time):
     # 获取昨天时间的参数
     B_groupname, B_begin_time, B_end_time = get_yesterday_time(groupname, begin_time, end_time)
